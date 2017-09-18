@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import NewGuestForm from './NewGuestForm';
 import ConfirmedFilter from './ConfirmedFilter'
 import Counter from './Counter'
 import GuestList from './GuestList'
@@ -23,24 +22,24 @@ const MainContenet = props =>
 
         <GuestList
           guests={props.guests}
-          toggleConfirmationAt={props.toggleConfirmationAt}
-          toggleEditingAt={props.toggleEditingAt}
-          setNameAt={props.setNameAt}
+          toggleConfirmation={props.toggleConfirmation}
+          toggleEditing={props.toggleEditing}
+          setName={props.setName}
           isFiltered={props.isFiltered}
-          removeGuestAt={props.removeGuestAt}
+          removeGuest={props.removeGuest}
           pendingGuest={props.pendingGuest}/>
       </div>
 
 	MainContenet.propTypes ={
 		toggleFilter: PropTypes.func.isRequired,
-        totalInvited: PropTypes.number.isRequired,
-        numberAttending: PropTypes.number.isRequired,
-        numberUnConfirmed: PropTypes.number.isRequired,
-        guests: PropTypes.number.isRequired,
-        setNameAt: PropTypes.func.isRequired,
-        toggleConfirmationAt: PropTypes.func.isRequired,
-        toggleEditingAt: PropTypes.func.isRequired,
-        removeGuestAt: PropTypes.func.isRequired,
+    totalInvited: PropTypes.number.isRequired,
+    numbertending: PropTypes.number.isRequired,
+    numberUnConfirmed: PropTypes.number.isRequired,
+    guests: PropTypes.number.isRequired,
+    setName: PropTypes.func.isRequired,
+    toggleConfirmation: PropTypes.func.isRequired,
+    toggleEditing: PropTypes.func.isRequired,
+    removeGuest: PropTypes.func.isRequired,
 		pendingGuest: PropTypes.string.isRequired
 	}
 
