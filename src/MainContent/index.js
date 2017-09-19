@@ -5,7 +5,7 @@ import ConfirmedFilter from './ConfirmedFilter'
 import Counter from './Counter'
 import GuestList from './GuestList'
 
-const MainContenet = props =>
+const MainContent = props =>
 	<div className="main">
         <div>
           <h2>Invitees</h2>
@@ -30,17 +30,18 @@ const MainContenet = props =>
           pendingGuest={props.pendingGuest}/>
       </div>
 
-	MainContenet.propTypes ={
+	MainContent.propTypes ={
 		toggleFilter: PropTypes.func.isRequired,
     totalInvited: PropTypes.number.isRequired,
-    numbertending: PropTypes.number.isRequired,
+    numberAttending: PropTypes.number.isRequired,
     numberUnConfirmed: PropTypes.number.isRequired,
-    guests: PropTypes.number.isRequired,
+    guests: PropTypes.array.isRequired,
     setName: PropTypes.func.isRequired,
     toggleConfirmation: PropTypes.func.isRequired,
     toggleEditing: PropTypes.func.isRequired,
     removeGuest: PropTypes.func.isRequired,
-		pendingGuest: PropTypes.string.isRequired
+		pendingGuest: PropTypes.string.isRequired,
+    isFiltered: PropTypes.bool.isRequired
 	}
 
-export default MainContenet;
+export default MainContent;

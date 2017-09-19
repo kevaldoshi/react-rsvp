@@ -10,7 +10,7 @@ class App extends Component {
   state = {
     guests : [],
     isFiltered: false,
-    pendingText: ""
+    pendingGuest: ""
   }
 
   lastGuestId = 0;
@@ -45,7 +45,7 @@ class App extends Component {
   toggleEditing = id =>
     this.toggleGuestProperty("isEditing", id);
 
-  setNameAt = (name, id) =>
+  setName = (name, id) =>
     this.setState({
       guests : this.state.guests.map((guest) => {
         if (id === guest.id) {
@@ -92,6 +92,7 @@ class App extends Component {
     const totalInvited = this.getTotalInvited();
     const numberAttending = this.getAttendingGuests();
     const numberUnConfirmed = totalInvited - numberAttending;
+    console.log(this.state.pendingGuest);
     return (
       <div className="App">
       <Header
@@ -101,14 +102,13 @@ class App extends Component {
 
       <MainContent
         toggleFilter={this.toggleFilter}
-        isFiltered={this.isFiltered}
         totalInvited={totalInvited}
         numberAttending={numberAttending}
         numberUnConfirmed={numberUnConfirmed}
         guests={this.state.guests}
         toggleConfirmation={this.toggleConfirmation}
         toggleEditing={this.toggleEditing}
-        setName={this.setNameA}
+        setName={this.setName}
         isFiltered={this.state.isFiltered}
         removeGuest={this.removeGuest}
         pendingGuest={this.state.pendingGuest}/>
